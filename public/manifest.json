@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ERROR WAVE Radio",
+  "version": "1.0",
+  "description": "Shared SoundCloud Radio",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open Radio"
+  },
+  "permissions": [
+    "storage",
+    "offscreen",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://soundcloud.com/*",
+    "http://localhost:3001/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; media-src https://* http://localhost:3001; connect-src https://* http://localhost:3001;"
+  }
+}
